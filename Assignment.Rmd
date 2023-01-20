@@ -1,0 +1,10 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+* Cricket
+* Hockey
+* Football
+
+### This is Level 3 heading

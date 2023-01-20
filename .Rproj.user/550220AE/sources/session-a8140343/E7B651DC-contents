@@ -1,0 +1,210 @@
+---
+title: "HW 1, CS 625, Spring 2023"
+author: "Sravanthi Proddatoori"
+date: Jan 19th, 2023
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Git, GitHub
+
+1. *What is your GitHub username?*
+SravanthiProddatoori
+
+2. *What is the URL of your remote GitHub repo (created through Mr. Kennedy's exercises)?*
+
+https://github.com/SravanthiProddatoori/DataVisualization-UIN-01232051-
+
+## R
+
+The command below will load the tidyverse package.  If you have installed R, RStudio, and the tidyverse package, it should display a list of loaded packages and their versions.
+```{r}
+library(tidyverse)
+```
+
+## R Markdown 
+
+1. *Create a bulleted list with at least 3 items*
+
+* Cricket
+* Hockey
+* Football
+
+2. *Write a single paragraph that demonstrates the use of italics, bold, bold italics, code, and includes a link. The paragraph does not have to make sense.*
+
+Hi my name is *Sravanthi Proddatoori*
+
+Hi my name is **Sravanthi Proddatoori**
+
+Hi my name is ***Sravanthi Proddatoori***
+
+Hi my name is `Sravanthi Proddatoori`
+
+My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
+
+
+<html>
+      <head>
+      </head>
+    </html>
+
+3. *Create a level 3 heading*
+
+### This is Level 3 heading
+
+## R 
+
+#### Data Visualization Exercises
+
+1. (Q2) *How many rows are in mpg? How many columns?*
+
+    There are 234 rows and 11 Columns
+    
+    ```{r}
+    ggplot2::mpg
+    ```
+
+1. (Q4) *Make a scatterplot of hwy vs cyl.*
+```{r}
+ggplot(data = mpg) + 
+geom_point(mapping = aes(x = cyl, y = hwy))
+```
+
+
+#### Workflow: basics Exercises
+
+1. (Q2) *Tweak each of the following R commands so that they run correctly (`library(tidyverse)` is correct):*
+
+```r
+library(tidyverse)
+ggplot(dota = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+fliter(mpg, cyl = 8)
+
+filter(diamond, carat > 3)
+```
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+
+filter(diamonds, carat > 3)
+```
+
+
+## Google Colab
+
+1. *What are the URLs of your Google Colab notebooks (both Python and R)?*
+Link of python : https://colab.research.google.com/drive/14CRgYq7-XX-0F3dioL25te2j-51BSTkW?usp=sharing
+
+Link of R : https://colab.research.google.com/drive/1gQVTWbjDrB5o9Zlg2MAbElX8_VInIor5?usp=sharing
+
+## Tableau
+
+*Insert your the image of your final bar chart here*
+
+![Tableau!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\Tableau.png)
+
+1. *What conclusions can you draw from the chart?*
+
+In the graph we can see that east area has greater phone sales whereas south has highest sales in machines. The profit is negative.
+
+
+## Observable and Vega-Lite
+
+### A Taste of Observable
+
+1. *In the "New York City weather forecast" section, try replacing `Forecast: detailedForecast` with `Forecast: shortForecast`. Then press the blue play button  or use Shift-Return to run your change. What happens?*
+
+If we replace the Forecast: detailedForecast with Forecast: shortForecast, if we run then it shows small details or description of the weather. For Example the description is changed to sunny.
+
+1. *Under the scatterplot of temperature vs. name, try replacing `markCircle()` with `markSquare()`. Then press the blue play button  or use Shift-Return to run your change. What happens? How about `markPoint()`?*
+
+
+If we try replacing markCircle() with markSquare() then the plots that were marked in circle will turn into square. If we change it into markPoint() then the square will turn into points.
+
+1. *Under "Pick a location, see the weather forecast", pick a location on the map.  Where was the point you picked near?*
+
+the longitude : -93   and lattitude: 102
+
+1. *The last visualization on this page is a "fancy" weather chart embedded from another notebook.  Click on the 3 dots next to that chart and choose 'Download PNG'.  Insert the PNG into your report.*
+
+### Charting with Vega-Lite
+
+`markCircle()`
+
+1. *Pass an option of `{ size: 200 }` to `markCircle()`.*
+
+![circle1!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\circle1.png)
+
+
+
+1. *Try `markSquare` instead of `markCircle`.*
+
+![square2!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\sqaure2.png)
+
+1. *Try `markPoint({ shape: 'diamond' })`.*
+
+![diamond3!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\diamond3.png)
+
+
+
+`vl.x().fieldQ("Horsepower")`, ...
+
+1. *Change `Horsepower` to `Acceleration`*
+
+![ma1!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\ma1.png)
+
+1. *Swap what fields are displayed on the x- and y-axis*
+
+![am2!](\Users\p.sravanthi\Downloads\Pictures\Screenshots\am2.png)
+
+`vl.tooltip().fieldN("Name")`
+
+1. *Change `Name` to `Origin`.*
+
+When we change a name to origin country name is displayed when you move the curser on graph.
+
+
+Another example, `count()`
+
+1. *Remove the `vl.y().fieldN("Origin")` line.*
+
+When we hover the curser on the graph we cannot see any label.
+
+![countofrecords!](\Users\p.sravanthi\Downloads\countofrecords.jpeg)
+
+1. *Replace `count()` with `average("Miles_per_Gallon")`.*
+
+when we replace it with average we can see average("Miles_per_Gallon) of a particular country when we hover on it.
+
+![average!](\Users\p.sravanthi\Downloads\average.jpeg)
+
+
+
+## References
+
+
+Reference 1, https://r4ds.had.co.nz/workflow-basics.html#practice
+
+* Reference 2, https://colab.research.google.com/drive/165dTuQy5P7c
+gG8QqZMuLWP02LD9fLpLJ#scrollTo=qJAKN6380cJc
+
+* Reference 3, https://observablehq.com/@tomb/a-taste-of-observable
+
+* Reference 4, https://www.tableau.com/academic/students
+
+* Reference 5, https://r4ds.had.co.nz/workflow-basics.html#practice
+
+* Reference 6, https://colab.research.google.com/drive/165dTuQy5P7cgG8QqZMuLWP02LD9fLpLJ#scrollTo=s8aeChJ4_pgz
+
+*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.*
+
+* Insert Reference 1, https://www.example.com
+* Insert Reference 2, https://www.example.com/reallyreallyreally-extra-long-URI/
