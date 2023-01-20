@@ -209,6 +209,8 @@ the longitude : -93 and lattitude: 102
     embedded from another notebook. Click on the 3 dots next to that
     chart and choose ‘Download PNG’. Insert the PNG into your report.*
 
+![untitled!](\Users\p.sravanthi\Downloads\untitled.png)
+
 ### Charting with Vega-Lite
 
 `markCircle()`
